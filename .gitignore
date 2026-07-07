@@ -1,0 +1,38 @@
+# WRF outputs
+wrfout*
+wrfrst*
+wrfinput*
+wrfbdy*
+wrflowinp*
+rsl.out.*
+rsl.error.*
+
+# WPS outputs
+met_em*
+geo_em*
+GRIBFILE.*
+FILE:*
+PFILE:*
+ERA5_p:*
+ERA5_sfc:*
+
+# Large datasets
+*.grib
+*.grib2
+*.GRIB
+*.GRIB2
+*.nc
+
+WPS_GEOG/
+ERA5/
+MSWEP/
+
+# Jupyter and Python
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+
+# System files
+Thumbs.db
+Desktop.ini
+.DS_Store

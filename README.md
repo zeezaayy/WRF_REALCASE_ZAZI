@@ -14,6 +14,8 @@
 - [Data Input](#data-input)
 - [Menjalankan WPS](#menjalankan-wps)
 - [Menjalankan WRF](#menjalankan-wrf)
+- [Hasil Simulasi (Visualisasi)](#hasil-simulasi-visualisasi)
+- [Evaluasi Statistik (WRF vs MSWEP)](#evaluasi-statistik-wrf-vs-mswep)
 - [Troubleshooting](#troubleshooting)
 - [Struktur Folder](#struktur-folder)
 - [Referensi](#referensi)
@@ -315,6 +317,48 @@ ls wrfbdy_d01 wrfinput_d0* wrflowinp_d0*
 ```bash
 mpirun -np 8 ./wrf.exe >& log.wrf
 ```
+
+## Hasil Simulasi (Visualisasi)
+
+Berikut adalah visualisasi hasil running model WRF-ARW untuk kejadian Siklon Tropis Dahlia, yang mencakup tiga parameter utama di ketiga domain (D01, D02, dan D03).
+
+### 1. Suhu Permukaan (Surface Temperature)
+Visualisasi ini menunjukkan dinamika suhu permukaan daratan dan laut (SST). Pembaruan SST (*SST update*) harian diaktifkan untuk menjaga akurasi interaksi laut-atmosfer karena pergerakan Siklon Dahlia mayoritas terjadi di Samudra Hindia.
+
+<video src="temp.mp4" controls="controls" width="100%"></video>
+
+### 2. Perbandingan Curah Hujan (Hourly Rainfall: WRF vs MSWEP)
+Visualisasi ini sangat penting untuk mengevaluasi performa model. Di sini, curah hujan per jam dari output WRF disandingkan dengan data observasi satelit MSWEP. Terlihat bagaimana model menangkap pergerakan sabuk hujan tepi (*outer band*) dari sistem siklon yang memicu hujan lebat di wilayah pesisir barat dan selatan Jawa.
+
+<video src="hujan.mp4" controls="controls" width="100%"></video>
+
+### 3. Kecepatan dan Arah Angin 10 Meter (10 m Wind Speed and Direction)
+Memperlihatkan dengan jelas struktur sirkulasi angin siklonik di sekitar pusat tekanan rendah. Angin kencang terlihat menjalar dan berdampak pada pesisir barat daya Sumatera dan selatan Jawa, walau pusat siklon bergerak perlahan menjauhi daratan ke arah tenggara.
+
+<video src="angin.mp4" controls="controls" width="100%"></video>
+
+## Evaluasi Statistik (WRF vs MSWEP)
+
+Untuk mengukur akurasi model secara kuantitatif, dilakukan evaluasi statistik antara output curah hujan WRF dengan data observasi satelit MSWEP pada area irisan (*common-area*) ketiga domain. Hal ini krusial untuk memvalidasi seberapa baik konfigurasi fisika model merepresentasikan realita atmosfer.
+
+### 1. Time Series Curah Hujan
+Grafik di bawah menunjukkan perbandingan rata-rata curah hujan per jam (*Mean Hourly Rainfall*). Pola temporal model WRF di ketiga resolusi (D01, D02, D03) terbukti cukup konsisten dalam mengikuti tren observasi MSWEP, terutama pada fase puncak badai.
+
+![Time Series Rainfall](image_bf0182.png)
+
+### 2. Perbandingan Titik Pusat Hujan (Rainfall Centroid)
+Analisis spasial dilakukan dengan menghitung jarak *centroid* curah hujan antara WRF dan MSWEP. Jarak centroid berkisar antara 47–50 km, menunjukkan model mampu melacak lokasi pusat intensitas hujan dengan cukup presisi mengingat resolusi grid yang digunakan.
+
+![Rainfall Centroid](image_bf0168.png)
+
+### 3. Metrik Evaluasi dan Ranking Domain
+Evaluasi kinerja model ditinjau secara holistik melalui berbagai metrik error dan kesamaan spasial, termasuk RMSE, MAE, Bias, Pearson *correlation*, SSIM, dan *Centroid Distance*. Berdasarkan metrik-metrik ini, dilakukan pemeringkatan (ranking) guna menentukan resolusi domain mana yang memberikan performa prediksi terbaik.
+
+![Tabel Evaluasi](image_bf0148.png)
+<br>
+![Ranking Evaluasi](image_bf0163.png)
+
+**Kesimpulan Evaluasi:** Domain **D02 (resolusi 10 km)** secara keseluruhan menunjukkan performa analitik terbaik (*Final Ranking: 1*) dibandingkan D01 dan D03 untuk studi kasus ini. Domain ini berhasil menyeimbangkan *error* yang relatif rendah dengan akurasi spasial (SSIM dan Centroid Distance) yang paling optimal.
 
 ## Troubleshooting
 

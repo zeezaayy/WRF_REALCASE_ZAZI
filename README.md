@@ -28,9 +28,9 @@ Siklon Tropis **Dahlia** lahir di Samudra Hindia sebelah selatan barat daya Beng
 
 Walau bergerak menjauh, sirkulasi tepi (*outer band*) Dahlia tetap memicu:
 
-- Hujan sedang–lebat di pesisir barat Bengkulu, Lampung, Banten, DKI Jakarta, dan Jawa Barat
-- Angin kencang > 20 knot di pesisir barat Sumatera bagian selatan
-- Gelombang laut 2,5–6,0 m di perairan barat Sumatera hingga Selat Sunda
+- Hujan sedang–lebat di pesisir barat Bengkulu, Lampung, Banten, DKI Jakarta, Jawa Barat, dan Jawa Tengah.
+- Angin kencang > 20 knot di pesisir barat Sumatera bagian selatan.
+- Gelombang laut 2,5–6,0 m di perairan barat Sumatera hingga Selat Sunda.
 
 Simulasi ini disusun untuk melihat bagaimana model menangkap dampak tidak langsung tersebut, khususnya penjalaran sabuk hujan tepi saat sistem menjauhi daratan.
 

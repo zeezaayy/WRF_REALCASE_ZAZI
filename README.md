@@ -1,4 +1,4 @@
-# Rekonstruksi Numerik Siklon Tropis Dahlia dengan WRF-ARW
+# Numerical Weather Simulation of Tropical Cyclone Dahlia (2017) Using WRF-ARW and ERA5 Reanalysis
 
 > Catatan riset pribadi — simulasi ulang kejadian Siklon Tropis Dahlia (29 November – 2 Desember 2017) memakai WRF-ARW v4.3, dijalankan di dalam container Docker `dtcenter/wps_wrf`.
 
@@ -21,6 +21,48 @@
 - [Referensi](#referensi)
 
 ---
+
+
+## Pendahuluan
+
+### Latar Belakang WRF
+
+**Weather Research and Forecasting (WRF)** merupakan model numerik atmosfer mesoskal yang banyak digunakan untuk penelitian maupun prakiraan cuaca operasional. WRF mampu mensimulasikan berbagai fenomena atmosfer, mulai dari sistem cuaca lokal hingga siklon tropis dengan konfigurasi domain dan skema fisika yang fleksibel. Pada studi ini digunakan **WRF-ARW v4.3** dengan data **ERA5 Reanalysis** sebagai kondisi awal dan batas simulasi.
+
+### Ringkasan Kejadian Siklon Tropis Dahlia
+
+Pada akhir November 2017, wilayah Indonesia dipengaruhi oleh dua siklon tropis yang terbentuk secara berurutan di Samudra Hindia, yaitu **Siklon Tropis Cempaka** dan **Siklon Tropis Dahlia**. Setelah Cempaka melemah, Dahlia berkembang di sebelah barat daya Bengkulu pada 29 November 2017. Walaupun pusat siklon bergerak menjauhi wilayah Indonesia, sirkulasi sistemnya masih memicu peningkatan curah hujan, angin kencang, dan gelombang tinggi di sebagian wilayah Sumatera dan Jawa. BMKG juga mengimbau masyarakat untuk mewaspadai potensi bencana hidrometeorologi selama periode tersebut.
+
+Penelitian ini bertujuan melakukan rekonstruksi kejadian Siklon Tropis Dahlia menggunakan **WRF-ARW v4.3** sehingga hasil simulasi dapat divisualisasikan dan dievaluasi terhadap data observasi satelit **MSWEP**.
+
+## Workflow
+
+```text
+ERA5 Reanalysis
+        │
+        ▼
+WRF Domain Wizard
+        │
+        ▼
+WPS
+ ├── geogrid
+ ├── ungrib
+ └── metgrid
+        │
+        ▼
+WRF
+ ├── real.exe
+ └── wrf.exe
+        │
+        ▼
+wrfout
+        │
+        ▼
+Visualization
+        │
+        ▼
+Evaluation (MSWEP)
+```
 
 ## Latar Belakang Kasus
 
@@ -66,6 +108,15 @@ Domain ditentukan pakai **WRF Domain Wizard**, dipusatkan di sekitar Laut Jawa b
 | **D01** | 30 km | 165 × 93 | Regional — Samudra Hindia, Sumatera–Jawa, Kalimantan bagian selatan |
 | **D02** | 10 km | 202 × 127 | Bengkulu, Lampung, Banten, Jawa bagian barat |
 | **D03** | 3,33 km | 250 × 163 | Jawa bagian barat hingga tengah dan perairan selatan Jawa |
+
+
+## Domain Configuration
+
+<p align="center">
+<img src="docs/domain.png" width="900">
+</p>
+
+> **Placeholder** — Ganti gambar di atas dengan hasil WRF Domain Wizard.
 
 Rasio pembesaran antar-domain konsisten **1:3** (`parent_grid_ratio = 1, 3, 3`), dengan posisi domain anak:
 
@@ -394,5 +445,7 @@ comsoftware/wrf/
 - Skamarock, W. C., et al. (2021). *A Description of the Advanced Research WRF Model Version 4.3*. NCAR Technical Note.
 - ECMWF – Copernicus Climate Change Service. *ERA5 Reanalysis Documentation*.
 - BMKG. *Siaran Pers "Cempaka Meluruh, Siklon Tropis Dahlia Lahir", November 2017*.
+- BMKG. *Cempaka Meluruh, Siklon Tropis Dahlia Lahir: Waspada Bencana Hidrometeorologi Menghadang*.
+- BMKG Regional III. *Buletin Informasi Siklon Tropis Dahlia*, Desember 2017.
 - BMKG. *Siaran Pers "Dahlia Punah, Cuaca Ekstrem Masih Mengintai", Desember 2017*.
 - WRF Domain Wizard — jiririchter.github.io/WRFDomainWizard

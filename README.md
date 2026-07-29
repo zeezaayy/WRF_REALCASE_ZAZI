@@ -530,8 +530,7 @@ Secara umum, wilayah dengan temperatur yang lebih rendah berkaitan dengan daerah
 
 ### 🎥 Animasi Temperatur Permukaan
 
-https://drive.google.com/file/d/15vKI69PXFYYcw4ojZRbz9CBlmvMUxZ6Z/view?usp=drive_link
-
+https://drive.google.com/file/d/1FRwf8efv6ijLkFeb3K2WRhwleZ9vJNFD/view?usp=drive_link
 ---
 
 ## 🌧️ Curah Hujan
@@ -546,7 +545,7 @@ Visualisasi menunjukkan distribusi spasial curah hujan selama periode simulasi. 
 
 ### 🎥 Animasi Curah Hujan Hasil Simulasi WRF
 
-https://drive.google.com/file/d/1FRwf8efv6ijLkFeb3K2WRhwleZ9vJNFD/view?usp=drive_link
+https://drive.google.com/file/d/15vKI69PXFYYcw4ojZRbz9CBlmvMUxZ6Z/view?usp=drive_link
 
 ### 🎥 Animasi Perbandingan Curah Hujan WRF vs MSWEP
 
@@ -569,7 +568,6 @@ Pola sirkulasi yang terbentuk memperlihatkan karakteristik aliran udara di sekit
 ### 🎥 Animasi Kecepatan dan Arah Angin
 
 https://drive.google.com/file/d/1Pf5zkxmXw_N2pdeHeVphrIcJ_nNvC4EO/view?usp=drive_link
-
 ---
 
 ## 🌀 Pergerakan Siklon Tropis Dahlia

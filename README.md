@@ -162,7 +162,7 @@ comsoftware/
 ## Konfigurasi Domain
 
 <p align="center">
-<img src="docs/domain.png" width="900">
+<img src="docs/DOMAIN%20WRF.png" width="900">
 </p>
 
 > 📌 **Gambar di atas menunjukkan konfigurasi tiga domain simulasi yang dibuat menggunakan WRF Domain Wizard.**

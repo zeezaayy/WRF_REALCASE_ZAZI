@@ -521,7 +521,7 @@ Bagian ini menampilkan hasil simulasi WRF-ARW untuk Siklon Tropis Dahlia (2017).
 # 🌡️ Temperatur Permukaan (T2)
 
 <p align="center">
-<img src="temperature permukaan.png" width="900">
+<img src="docs/temperature%20permukaan.png" width="900">
 </p>
 
 Variabel **T2** digunakan untuk merepresentasikan temperatur udara pada ketinggian 2 meter di atas permukaan.
@@ -535,7 +535,7 @@ https://drive.google.com/file/d/15vKI69PXFYYcw4ojZRbz9CBlmvMUxZ6Z/view?usp=drive
 # 🌧️ Curah Hujan
 
 <p align="center">
-<img src="curah hujan.png" width="900">
+<img src="docs/curah%20hujan.png" width="900">
 </p>
 
 Curah hujan dihitung dari akumulasi **RAINC** dan **RAINNC**, kemudian dikonversi menjadi curah hujan per jam.
@@ -549,7 +549,7 @@ https://drive.google.com/file/d/1FRwf8efv6ijLkFeb3K2WRhwleZ9vJNFD/view?usp=drive
 # 🌬️ Kecepatan dan Arah Angin
 
 <p align="center">
-<img src="plot angin.png" width="900">
+<img src="docs/plot%20angin.png" width="900">
 </p>
 
 Visualisasi memperlihatkan distribusi kecepatan angin beserta arah aliran angin selama simulasi berlangsung.
@@ -564,7 +564,7 @@ https://drive.google.com/file/d/1Pf5zkxmXw_N2pdeHeVphrIcJ_nNvC4EO/view?usp=drive
 
 | Hasil Simulasi WRF | Referensi BMKG |
 |:------------------:|:--------------:|
-| <img src="siklon.png" width="420"> | <img src="siklon dahlia.jpg" width="420"> |
+| <img src="docs/siklon.png" width="420"> | <img src="docs/siklon%20dahlia.jpg" width="420"> |
 
 Perbandingan lintasan pusat siklon hasil simulasi dengan referensi yang dipublikasikan oleh BMKG.
 
@@ -579,7 +579,7 @@ https://drive.google.com/file/d/1xQRibaGs3Ot5KLM9m1vEj2YwOaxjMSCF/view?usp=drive
 ## Rerata Curah Hujan
 
 <p align="center">
-<img src="rerata hujan.png" width="850">
+<img src="docs/rerata%20hujan.png" width="850">
 </p>
 
 Rerata curah hujan digunakan untuk membandingkan kecenderungan temporal antara hasil simulasi WRF dan data observasi.
@@ -589,7 +589,7 @@ Rerata curah hujan digunakan untuk membandingkan kecenderungan temporal antara h
 ## RMSE
 
 <p align="center">
-<img src="rmse stasiun pengamatan.png" width="850">
+<img src="docs/rmse%20stasiun%20pengamatan.png" width="850">
 </p>
 
 Nilai **Root Mean Square Error (RMSE)** digunakan untuk mengukur besarnya penyimpangan hasil simulasi terhadap data observasi pada setiap stasiun pengamatan.
@@ -599,7 +599,7 @@ Nilai **Root Mean Square Error (RMSE)** digunakan untuk mengukur besarnya penyim
 ## Scatter Plot
 
 <p align="center">
-<img src="scatter plot.png" width="800">
+<img src="docs/scatter%20plot.png" width="850">
 </p>
 
 Scatter plot digunakan untuk melihat hubungan antara nilai hasil simulasi WRF dan data observasi.

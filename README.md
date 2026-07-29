@@ -236,7 +236,7 @@ link_grib.csh
 Sesuaikan parameter simulasi pada file `namelist.wps`.
 
 ```bash
-nano namelist.wps
+vi namelist.wps
 ```
 
 Contoh konfigurasi utama:
@@ -245,19 +245,46 @@ Contoh konfigurasi utama:
 &share
  wrf_core = 'ARW',
  max_dom = 3,
- start_date = '2017-11-26_00:00:00',
- end_date   = '2017-11-29_00:00:00',
+
+ start_date = '2017-11-29_00:00:00','2017-11-29_00:00:00','2017-11-29_00:00:00',
+
+ end_date   = '2017-12-02_23:00:00','2017-12-02_23:00:00','2017-12-02_23:00:00',
+
  interval_seconds = 3600,
 /
 
 &geogrid
- parent_id         =   1, 1, 2,
- parent_grid_ratio =   1, 3, 3,
+ parent_id         = 1,   1,   2,
+ parent_grid_ratio = 1,   3,   3,
+
+ i_parent_start    = 1,   30,  35,
+ j_parent_start    = 1,   25,  30,
+
+ e_we              = 150, 220, 232,
+ e_sn              = 130, 214, 214,
+
+ geog_data_res     = 'default','default','default',
+
  dx = 27000,
  dy = 27000,
- ref_lat = -8.5,
- ref_lon = 109.5,
+
+ map_proj = 'mercator',
+ ref_lat  = -8.5,
+ ref_lon  = 109.5,
+ truelat1 = -8.5,
+ stand_lon = 109.5,
+
  geog_data_path = '/comsoftware/wrf/WPS_GEOG'
+/
+
+&ungrib
+ out_format = 'WPS',
+ prefix = 'ERA5'
+/
+
+&metgrid
+ fg_name = 'ERA5',
+ io_form_metgrid = 2,
 /
 ```
 
@@ -386,8 +413,153 @@ Buka file konfigurasi.
 ```bash
 nano namelist.input
 ```
+Contoh konfigurasi utama:
 
-Sesuaikan periode simulasi, jumlah domain, interval output, serta parameter fisika sesuai kebutuhan penelitian.
+```text
+&time_control
+ run_days                            = 3,
+ run_hours                           = 23,
+ run_minutes                         = 0,
+ run_seconds                         = 0,
+
+ start_year                          = 2017, 2017, 2017,
+ start_month                         = 11,   11,   11,
+ start_day                           = 29,   29,   29,
+ start_hour                          = 00,   00,   00,
+
+ end_year                            = 2017, 2017, 2017,
+ end_month                           = 12,   12,   12,
+ end_day                             = 02,   02,   02,
+ end_hour                            = 23,   23,   23,
+
+ interval_seconds                    = 3600,
+
+ input_from_file                     = .true., .true., .true.,
+
+ history_interval                    = 60, 60, 60,
+ frames_per_outfile                  = 1, 1, 1,
+
+ restart                             = .false.,
+ restart_interval                    = 60,
+
+ io_form_history                     = 2,
+ io_form_restart                     = 2,
+ io_form_input                       = 2,
+ io_form_boundary                    = 2,
+
+ auxinput4_inname                    = "wrflowinp_d<domain>",
+ auxinput4_interval                  = 60, 60, 60,
+ io_form_auxinput4                   = 2,
+
+ debug_level                         = 0,
+/
+
+&domains
+ time_step                           = 150,
+ time_step_fract_num                 = 0,
+ time_step_fract_den                 = 1,
+
+ max_dom                             = 3,
+
+ e_we                                = 150, 220, 232,
+ e_sn                                = 130, 214, 214,
+
+ e_vert                              = 60, 60, 60,
+
+ p_top_requested                     = 10000,
+
+ num_metgrid_levels                  = 38,
+ num_metgrid_soil_levels             = 4,
+
+ dx                                  = 27000,
+ dy                                  = 27000,
+
+ grid_id                             = 1, 2, 3,
+ parent_id                           = 1, 1, 2,
+
+ i_parent_start                      = 1, 30, 35,
+ j_parent_start                      = 1, 25, 30,
+
+ parent_grid_ratio                   = 1, 3, 3,
+ parent_time_step_ratio              = 1, 3, 3,
+
+ feedback                            = 1,
+ smooth_option                       = 0,
+/
+
+&physics
+ mp_physics                          = 2, 2, 2,
+ ra_lw_physics                       = 4, 4, 4,
+ ra_sw_physics                       = 4, 4, 4,
+
+ radt                                = 27, 9, 3,
+
+ sf_sfclay_physics                   = 1, 1, 1,
+ sf_surface_physics                  = 2, 2, 2,
+
+ bl_pbl_physics                      = 1, 1, 1,
+ bldt                                = 0, 0, 0,
+
+ cu_physics                          = 2, 2, 0,
+ cudt                                = 5, 5, 0,
+
+ isfflx                              = 1,
+ ifsnow                              = 1,
+ icloud                              = 1,
+
+ surface_input_source                = 3,
+
+ num_soil_layers                     = 4,
+
+ sst_update                          = 1,
+
+ sf_urban_physics                    = 0, 0, 0,
+/
+
+&fdda
+/
+
+&dynamics
+ w_damping                           = 1,
+
+ diff_opt                            = 1, 1, 1,
+ km_opt                              = 4, 4, 4,
+
+ diff_6th_opt                        = 0, 0, 0,
+ diff_6th_factor                     = 0.12, 0.12, 0.12,
+
+ base_temp                           = 290.,
+
+ damp_opt                            = 3,
+ zdamp                               = 5000., 5000., 5000.,
+ dampcoef                            = 0.2, 0.2, 0.2,
+
+ khdif                               = 0, 0, 0,
+ kvdif                               = 0, 0, 0,
+
+ non_hydrostatic                     = .true., .true., .true.,
+
+ moist_adv_opt                       = 1, 1, 1,
+ scalar_adv_opt                      = 1, 1, 1,
+
+ gwd_opt                             = 1, 0, 0,
+/
+
+&bdy_control
+ spec_bdy_width                      = 5,
+ specified                           = .true., .false., .false.,
+ nested                              = .false., .true., .true.,
+/
+
+&grib2
+/
+
+&namelist_quilt
+ nio_tasks_per_group                 = 0,
+ nio_groups                          = 1,
+/
+/
+```
 
 > 📌 Pada repository ini digunakan konfigurasi `namelist.input` untuk simulasi Siklon Tropis Dahlia periode November 2017. Salin konfigurasi lengkap yang digunakan pada proyek ke bagian ini.
 

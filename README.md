@@ -45,7 +45,9 @@ Pada repository ini digunakan **WRF-ARW v4.3** dengan data **ERA5 Reanalysis** s
 
 ## Siklon Tropis Dahlia
 
-Pada akhir November 2017, wilayah Indonesia dipengaruhi oleh dua siklon tropis yang terbentuk secara berurutan di Samudra Hindia, yaitu **Siklon Tropis Cempaka** dan **Siklon Tropis Dahlia**.
+Siklon Tropis Dahlia merupakan siklon tropis yang terbentuk di Samudra Hindia pada akhir November 2017, tidak lama setelah melemahnya Siklon Tropis Cempaka. Meskipun pusat siklon berada di luar wilayah Indonesia, sistem ini memberikan pengaruh yang cukup signifikan terhadap kondisi cuaca di berbagai wilayah, khususnya Pulau Jawa, Sumatera bagian selatan, serta perairan di Samudra Hindia.
+
+Keberadaan Siklon Tropis Dahlia meningkatkan suplai uap air dan memperkuat konvergensi massa udara sehingga memicu **curah hujan lebat**, **angin kencang**, dan **gelombang laut tinggi** di sejumlah wilayah Indonesia. Dampak hidrometeorologi yang dilaporkan antara lain meliputi **banjir**, **tanah longsor**, **genangan**, pohon tumbang akibat angin kencang, serta terganggunya aktivitas pelayaran karena tinggi gelombang yang meningkat.
 
 Penelitian ini bertujuan merekonstruksi kejadian tersebut menggunakan model WRF sehingga hasil simulasi dapat dibandingkan dengan data observasi satelit.
 

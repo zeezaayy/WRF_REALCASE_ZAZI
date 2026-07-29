@@ -518,93 +518,115 @@ Bagian ini menampilkan hasil simulasi WRF-ARW untuk Siklon Tropis Dahlia (2017).
 
 ---
 
-# 🌡️ Temperatur Permukaan (T2)
+## 🌡️ Temperatur Permukaan (T2)
 
 <p align="center">
 <img src="docs/temperature%20permukaan.png" width="900">
 </p>
 
-Variabel **T2** digunakan untuk merepresentasikan temperatur udara pada ketinggian 2 meter di atas permukaan.
+Variabel **T2 (Temperature at 2 meters)** merepresentasikan temperatur udara pada ketinggian sekitar 2 meter di atas permukaan tanah. Distribusi temperatur hasil simulasi menunjukkan variasi spasial temperatur selama perkembangan Siklon Tropis Dahlia.
 
-🎥 **Animasi MP4**
+Secara umum, wilayah dengan temperatur yang lebih rendah berkaitan dengan daerah yang mengalami pertumbuhan awan konvektif dan curah hujan yang tinggi, sedangkan wilayah dengan temperatur yang lebih tinggi menunjukkan kondisi atmosfer yang relatif lebih stabil. Visualisasi ini membantu menggambarkan bagaimana kondisi atmosfer berubah selama periode simulasi.
+
+### 🎥 Animasi Temperatur Permukaan
 
 https://drive.google.com/file/d/15vKI69PXFYYcw4ojZRbz9CBlmvMUxZ6Z/view?usp=drive_link
 
 ---
 
-# 🌧️ Curah Hujan
+## 🌧️ Curah Hujan
 
 <p align="center">
 <img src="docs/curah%20hujan.png" width="900">
 </p>
 
-Curah hujan dihitung dari akumulasi **RAINC** dan **RAINNC**, kemudian dikonversi menjadi curah hujan per jam.
+Curah hujan dihitung menggunakan akumulasi variabel **RAINC** (Convective Precipitation) dan **RAINNC** (Non-Convective Precipitation), kemudian dikonversi menjadi curah hujan per jam.
 
-🎥 **Animasi MP4**
+Visualisasi menunjukkan distribusi spasial curah hujan selama periode simulasi. Intensitas hujan yang tinggi umumnya berasosiasi dengan aktivitas konvektif yang dipengaruhi oleh Siklon Tropis Dahlia. Informasi ini digunakan untuk mengidentifikasi wilayah dengan potensi hujan lebat serta mengevaluasi respon model terhadap perkembangan sistem siklon.
+
+### 🎥 Animasi Curah Hujan Hasil Simulasi WRF
 
 https://drive.google.com/file/d/1FRwf8efv6ijLkFeb3K2WRhwleZ9vJNFD/view?usp=drive_link
 
----
+### 🎥 Animasi Perbandingan Curah Hujan WRF vs MSWEP
 
-# 🌬️ Kecepatan dan Arah Angin
-
-<p align="center">
-<img src="docs/plot%20angin.png" width="900">
-</p>
-
-Visualisasi memperlihatkan distribusi kecepatan angin beserta arah aliran angin selama simulasi berlangsung.
-
-🎥 **Animasi MP4**
-
-https://drive.google.com/file/d/1Pf5zkxmXw_N2pdeHeVphrIcJ_nNvC4EO/view?usp=drive_link
-
----
-
-# 🌀 Pergerakan Siklon Tropis Dahlia
-
-| Hasil Simulasi WRF | Referensi BMKG |
-|:------------------:|:--------------:|
-| <img src="docs/siklon.png" width="420"> | <img src="docs/siklon%20dahlia.jpg" width="420"> |
-
-Perbandingan lintasan pusat siklon hasil simulasi dengan referensi yang dipublikasikan oleh BMKG.
-
-🎥 **Animasi MP4**
+Animasi berikut memperlihatkan perbandingan distribusi curah hujan antara hasil simulasi WRF dan data observasi **MSWEP** pada setiap langkah waktu. Visualisasi ini memudahkan evaluasi kemampuan model dalam merepresentasikan pola spasial maupun temporal curah hujan selama kejadian Siklon Tropis Dahlia.
 
 https://drive.google.com/file/d/1xQRibaGs3Ot5KLM9m1vEj2YwOaxjMSCF/view?usp=drive_link
 
 ---
 
-# 📈 Validasi Hasil
+## 🌬️ Kecepatan dan Arah Angin
 
-## Rerata Curah Hujan
+<p align="center">
+<img src="docs/plot%20angin.png" width="900">
+</p>
+
+Visualisasi angin menampilkan distribusi kecepatan serta arah angin hasil simulasi menggunakan komponen **U10** dan **V10** pada ketinggian 10 meter dari permukaan.
+
+Pola sirkulasi yang terbentuk memperlihatkan karakteristik aliran udara di sekitar pusat Siklon Tropis Dahlia. Perubahan arah dan kecepatan angin selama simulasi memberikan gambaran mengenai perkembangan sistem siklon serta interaksinya dengan atmosfer di wilayah Indonesia.
+
+### 🎥 Animasi Kecepatan dan Arah Angin
+
+https://drive.google.com/file/d/1Pf5zkxmXw_N2pdeHeVphrIcJ_nNvC4EO/view?usp=drive_link
+
+---
+
+## 🌀 Pergerakan Siklon Tropis Dahlia
+
+| Hasil Simulasi WRF | Referensi BMKG |
+|:------------------:|:--------------:|
+| <img src="docs/siklon.png" width="420"> | <img src="docs/siklon%20dahlia.jpg" width="420"> |
+
+Gambar di atas memperlihatkan perbandingan posisi dan pola pergerakan Siklon Tropis Dahlia hasil simulasi WRF dengan informasi yang dipublikasikan oleh BMKG.
+
+Secara umum, hasil simulasi mampu merepresentasikan arah pergerakan siklon yang sesuai dengan kondisi aktual. Meskipun masih terdapat sedikit perbedaan posisi maupun waktu akibat resolusi model dan ketidakpastian kondisi atmosfer, pola lintasan yang dihasilkan menunjukkan bahwa konfigurasi model telah mampu menggambarkan evolusi sistem siklon dengan baik.
+
+---
+
+### 📊 Rerata Curah Hujan
 
 <p align="center">
 <img src="docs/rerata%20hujan.png" width="850">
 </p>
 
-Rerata curah hujan digunakan untuk membandingkan kecenderungan temporal antara hasil simulasi WRF dan data observasi.
+Grafik rerata curah hujan digunakan untuk membandingkan pola perubahan curah hujan antara hasil simulasi WRF dan data observasi selama periode simulasi.
+
+Semakin dekat pola kedua kurva, semakin baik kemampuan model dalam merepresentasikan perubahan curah hujan terhadap waktu. Sebaliknya, perbedaan yang besar menunjukkan adanya penyimpangan hasil simulasi yang dapat dipengaruhi oleh resolusi model, skema parameterisasi fisika, maupun ketidakpastian data masukan.
 
 ---
 
-## RMSE
+### 📉 Root Mean Square Error (RMSE)
 
 <p align="center">
 <img src="docs/rmse%20stasiun%20pengamatan.png" width="850">
 </p>
 
-Nilai **Root Mean Square Error (RMSE)** digunakan untuk mengukur besarnya penyimpangan hasil simulasi terhadap data observasi pada setiap stasiun pengamatan.
+Root Mean Square Error (RMSE) merupakan salah satu metrik statistik yang digunakan untuk mengukur besarnya galat antara hasil simulasi WRF dan data observasi pada setiap stasiun pengamatan.
 
+Nilai **RMSE yang semakin kecil (mendekati 0)** menunjukkan bahwa hasil simulasi semakin mendekati data observasi sehingga performa model semakin baik. Sebaliknya, nilai RMSE yang besar mengindikasikan adanya penyimpangan yang lebih tinggi antara hasil simulasi dan kondisi aktual.
+
+Analisis RMSE pada setiap stasiun membantu mengidentifikasi lokasi dengan performa simulasi terbaik maupun wilayah yang masih memerlukan peningkatan konfigurasi model.
 ---
 
-## Scatter Plot
+### 📈 Scatter Plot
 
 <p align="center">
 <img src="docs/scatter%20plot.png" width="850">
 </p>
 
-Scatter plot digunakan untuk melihat hubungan antara nilai hasil simulasi WRF dan data observasi.
+Scatter plot digunakan untuk mengevaluasi hubungan antara hasil simulasi WRF dan data observasi pada seluruh titik pengamatan.
 
+Semakin banyak titik yang berada di sekitar garis diagonal (garis 1:1), maka semakin tinggi tingkat kesesuaian antara hasil simulasi dan observasi. Sebaliknya, penyebaran titik yang semakin jauh dari garis tersebut menunjukkan adanya perbedaan yang lebih besar antara kedua dataset.
+
+Visualisasi ini memberikan gambaran mengenai konsistensi model dalam merepresentasikan variasi curah hujan pada berbagai kondisi pengamatan.
 ---
+
+## 📌 Kesimpulan Hasil Simulasi
+
+Berdasarkan hasil simulasi dan proses validasi, model **WRF-ARW v4.3** mampu merepresentasikan karakteristik utama Siklon Tropis Dahlia, meliputi distribusi temperatur permukaan, pola sirkulasi angin, serta distribusi curah hujan selama periode simulasi.
+
+Hasil validasi terhadap data observasi menunjukkan bahwa model telah berhasil mengikuti pola umum kejadian, meskipun masih terdapat penyimpangan pada beberapa lokasi yang ditunjukkan oleh nilai **RMSE** dan penyebaran titik pada **scatter plot**. Secara keseluruhan, konfigurasi model yang digunakan telah memberikan hasil yang cukup baik dalam menggambarkan kondisi atmosfer selama kejadian Siklon Tropis Dahlia tahun 2017 dan dapat dimanfaatkan sebagai dasar analisis maupun penelitian lanjutan.
 
 # ⚠️ Troubleshooting
 
@@ -632,7 +654,7 @@ Scatter plot digunakan untuk melihat hubungan antara nilai hasil simulasi WRF da
 
 | Visualisasi | Link |
 |-------------|------|
-| Temperatur Permukaan | https://drive.google.com/file/d/15vKI69PXFYYcw4ojZRbz9CBlmvMUxZ6Z/view?usp=drive_link |
-| Curah Hujan | https://drive.google.com/file/d/1FRwf8efv6ijLkFeb3K2WRhwleZ9vJNFD/view?usp=drive_link |
-| Kecepatan & Arah Angin | https://drive.google.com/file/d/1Pf5zkxmXw_N2pdeHeVphrIcJ_nNvC4EO/view?usp=drive_link |
-| Pergerakan Siklon | https://drive.google.com/file/d/1xQRibaGs3Ot5KLM9m1vEj2YwOaxjMSCF/view?usp=drive_link |
+| 🌡️ Temperatur Permukaan | https://drive.google.com/file/d/15vKI69PXFYYcw4ojZRbz9CBlmvMUxZ6Z/view?usp=drive_link |
+| 🌧️ Curah Hujan (WRF) | https://drive.google.com/file/d/1FRwf8efv6ijLkFeb3K2WRhwleZ9vJNFD/view?usp=drive_link |
+| 🌧️ Curah Hujan (WRF vs MSWEP) | https://drive.google.com/file/d/1xQRibaGs3Ot5KLM9m1vEj2YwOaxjMSCF/view?usp=drive_link |
+| 🌬️ Kecepatan & Arah Angin | https://drive.google.com/file/d/1Pf5zkxmXw_N2pdeHeVphrIcJ_nNvC4EO/view?usp=drive_link |

@@ -795,7 +795,7 @@ Visualisasi ini memberikan gambaran mengenai konsistensi model dalam merepresent
 ### 📍 Perbandingan Titik Pusat Curah Hujan (Rainfall Centroid)
 
 <p align="center">
-<img src="docs/rainfall%20centroid.png" width="900">
+<img src="docs/centroid.png" width="900">
 </p>
 
 Visualisasi ini membandingkan **titik pusat distribusi curah hujan (rainfall centroid)** antara hasil simulasi **WRF-ARW** dan data observasi **MSWEP** pada setiap domain simulasi (D01, D02, dan D03). Titik centroid dihitung sebagai pusat massa (*center of mass*) dari distribusi curah hujan terakumulasi, sehingga merepresentasikan lokasi dominan terjadinya hujan selama periode simulasi.

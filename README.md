@@ -155,7 +155,7 @@ comsoftware/
 
 | Domain | Resolusi | Grid | Cakupan |
 |---------|---------|---------|----------------|
-| D01 | 27 km | 170 × 170 | Regional |
+| D01 | 30 km | 170 × 170 | Regional |
 | D02 | 9 km | 190 × 175 | Jawa Bagian Tengah |
 | D03 | 3 km | 250 × 220 | Wilayah Studi |
 

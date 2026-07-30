@@ -1,4 +1,4 @@
-# 🌪️ Simulasi Numerik Siklon Tropis Dahlia (2017) Menggunakan Model WRF-ARW v4.3
+# Simulasi Numerik Siklon Tropis Dahlia (2017) Menggunakan Model WRF-ARW v4.3
 
 ![Platform](https://img.shields.io/badge/Platform-Windows%2010%2F11-blue)
 ![Docker](https://img.shields.io/badge/Docker-dtcenter%2Fwps__wrf-2496ED?logo=docker)
@@ -791,6 +791,20 @@ Semakin banyak titik yang berada di sekitar garis diagonal (garis 1:1), maka sem
 
 Visualisasi ini memberikan gambaran mengenai konsistensi model dalam merepresentasikan variasi curah hujan pada berbagai kondisi pengamatan.
 ---
+
+### 📍 Perbandingan Titik Pusat Curah Hujan (Rainfall Centroid)
+
+<p align="center">
+<img src="docs/rainfall%20centroid.png" width="900">
+</p>
+
+Visualisasi ini membandingkan **titik pusat distribusi curah hujan (rainfall centroid)** antara hasil simulasi **WRF-ARW** dan data observasi **MSWEP** pada setiap domain simulasi (D01, D02, dan D03). Titik centroid dihitung sebagai pusat massa (*center of mass*) dari distribusi curah hujan terakumulasi, sehingga merepresentasikan lokasi dominan terjadinya hujan selama periode simulasi.
+
+Pada setiap domain, simbol **lingkaran biru** menunjukkan posisi centroid hasil simulasi WRF, sedangkan simbol **tanda silang oranye** menunjukkan centroid berdasarkan data observasi MSWEP. Nilai **Centroid Distance** menyatakan jarak antara kedua titik tersebut dalam satuan kilometer.
+
+Hasil simulasi menunjukkan nilai **Centroid Distance** sebesar **48,11 km** pada Domain 1 (D01), **47,94 km** pada Domain 2 (D02), dan **50,72 km** pada Domain 3 (D03). Nilai yang relatif serupa pada ketiga domain mengindikasikan bahwa model WRF mampu merepresentasikan lokasi utama kejadian hujan dengan konsistensi yang baik, meskipun masih terdapat pergeseran spasial sekitar **48–51 km** terhadap data observasi.
+
+Semakin **kecil** nilai **Centroid Distance**, semakin baik kemampuan model dalam merepresentasikan posisi spasial distribusi curah hujan dibandingkan data observasi. Sebaliknya, nilai yang lebih besar menunjukkan adanya pergeseran lokasi hujan hasil simulasi terhadap kondisi aktual.
 
 ## 📌 Kesimpulan Hasil Simulasi
 
